@@ -1,0 +1,177 @@
+   @import 'https://fonts.googleapis.com/css?family=Nunito:400,700|Orbitron:400,700';
+      
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0c0c0c;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+
+    #score {
+        position: absolute;
+        top: 0;
+        width: 100;
+        text-align: center;
+        font-size: 2em;
+        margin: 0;
+        padding: 1rem 0;
+        background: linear-gradient(270deg, #ffaec0, #ffc6a5, #aee6ff, #b5d8ff);
+        background-size: 800% 800%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glowMove 10s ease infinite;
+        text-shadow: 0 0 10px rgba(255, 174, 192, 0.4);
+        z-index: 10;
+    }
+
+    @keyframes glowMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #app, #pixi-container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+        color: #aaa;
+        font-size: 0.8rem;
+    }
+
+
+    input {
+      width: 80%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(244, 176, 227, 0.5);
+      transition: box-shadow 0.3s ease;
+      border: 1px solid white;
+    }
+
+    input:focus {
+      box-shadow: 0 0 15px #ffaec0, 0 0 10px #ffc6a5;
+      outline: none;
+    }
+
+    button {
+      width: 30%;
+      margin: 0 auto;
+      background: linear-gradient(90deg, #39e6da, #36c9f2, #39e6da);
+      cursor: pointer;
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(244, 176, 227, 0.5);
+      transition: box-shadow 0.3s ease;
+      border: 1px solid black;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .form-footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .input-group {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      margin: 10px 5px;
+    }
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      border-bottom: 2px solid #82d3f7;
+    }
+    
+    .progress-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      justify-items: center
+      margin-top: 2rem;
+    }
+
+    .circular-progress {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(#82d3f7 75%, #333 0);
+      box-shadow: 0 0 15px #aee6ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+.mapcontainer {
+    margin: 2em; /* Center the container horizontally */
+    background-color: #000; /* Set a white background for the container */
+    border-radius: 100px; /* Add rounded corners to the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    position: relative;
+    width: 80%; /* Set the width of the container to 80% of the parent */
+    height: 40em; /* Set a fixed height for the container */
+    padding: 3em;
+}
+
+.mapael .map {
+    width: 100%; /* Make the map take the full width of the container */
+}

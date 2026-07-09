@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmilyBot</title>
+    <style>
+        body {
+          margin: 0;
+          background-color: #0c0c0c;
+          font-family: 'Orbitron', sans-serif;
+          color: white;
+          overflow: hidden;
+        }
+
+        div.top_lane {
+          width: 100%;
+          text-align: right;
+        }
+    
+        .score {
+          position: relative;
+          padding: 2rem;
+          width: 300px;
+          border-radius: 20px;
+          z-index: 1;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.5);
+        }
+    
+        @keyframes glowMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+    
+        #app, #pixi-container {
+          width: 100vw;
+          height: 100vh;
+          position: relative;
+        }
+    
+        canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100% !important;
+          height: 100% !important;
+          display: block;
+        }
+    
+        dialog.modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.9);
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+        }
+    
+        dialog[open] {
+          display: flex;
+        }
+    
+        .modal article {
+          background-color: #1a1a1a;
+          border-radius: 12px;
+          padding: 2rem;
+          box-shadow: 0 0 20px #ffaec0;
+          text-align: center;
+          max-width: 400px;
+        }
+    
+        .modal h2 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          background: linear-gradient(270deg, #ffaec0, #ffc6a5, #aee6ff, #b5d8ff);
+          background-size: 800% 800%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: glowMove 10s ease infinite;
+        }
+    
+        .modal p {
+          color: #ace7ef;
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+        }
+    
+        .modal button {
+          margin: 0.5rem;
+          border-radius: 25px;
+          font-weight: bold;
+          background: linear-gradient(to right, #ffaec0, #aee6ff);
+          box-shadow: 0 0 10px #ffaec0;
+          color: #0c0c0c;
+        }
+    
+        footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          text-align: center;
+          padding: 0.5rem;
+          color: #aaa;
+          font-size: 0.8rem;
+        }
+      </style>
+  <script type="module" crossorigin src="./assets/bras-Bs9T3Xqd.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/index-7Jpepj5x.js">
+  <link rel="modulepreload" crossorigin href="./assets/Graphics-Ba7PgnfX.js">
+  <link rel="modulepreload" crossorigin href="./assets/RenderLayer-Bi2Gb-zb.js">
+  <link rel="modulepreload" crossorigin href="./assets/Text-CvfI2RY-.js">
+  <link rel="stylesheet" crossorigin href="./assets/pico-DxCYN04u.css">
+</head>
+<body>
+  
+    <div id="app">
+      <div id="pixi-container"></div>
+    </div>
+  
+    <!-- MODAL -->
+    <dialog id="endModal" class="modal">
+      <article>
+        <h2 id="resultTitle">YOU WIN!</h2>
+        <p id="resultSummary"></p>
+  
+        <div id="winButtons">
+          <button onclick="nextLevel()">Play Next Level</button>
+          <button onclick="returnToMap()">Return to Map</button>
+        </div>
+  
+        <div id="loseButtons" style="display: none;">
+          <button onclick="retryLevel()">Try Again</button>
+          <button onclick="returnToMap()">Return to Map</button>
+        </div>
+      </article>
+    </dialog>
+  
+    <footer>Emily World Game • Powered by PixiJS</footer>
+  
+  
+    <script>
+      function showEndModal({ win, topsMatched, totalTops, time }) {
+        const modal = document.getElementById('endModal');
+        document.getElementById('resultTitle').textContent = win ? 'YOU WIN!' : 'YOU LOSE.';
+        document.getElementById('resultSummary').textContent = 
+          `You completed ${topsMatched} of ${totalTops} tops in ${time} seconds.`;
+  
+        document.getElementById('winButtons').style.display = win ? 'block' : 'none';
+        document.getElementById('loseButtons').style.display = win ? 'none' : 'block';
+  
+        modal.showModal();
+      }
+  
+      function nextLevel() {
+        alert("Loading next level...");
+        // Add logic to load next level
+      }
+  
+      function retryLevel() {
+        location.reload();
+      }
+  
+      function returnToMap() {
+        window.location.href = "/map.html";
+      }
+    </script>
+  </body>
+</html>

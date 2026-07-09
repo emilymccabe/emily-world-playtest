@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emily World - Game Portal</title>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0c0c0c;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(270deg, #ffaec0, #ffc6a5, #aee6ff, #b5d8ff);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowMove 10s ease infinite;
+      margin-bottom: 0.25rem;
+    }
+
+    @keyframes glowMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p.subtitle {
+      color: #aaa;
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    a.card {
+      display: block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    a.card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 16px rgba(255, 174, 192, 0.4);
+    }
+
+    a.card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: #ffaec0;
+    }
+
+    a.card p {
+      margin: 0;
+      color: #ace7ef;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Emily World</h1>
+  <p class="subtitle">Games in progress — click one to playtest it!</p>
+
+  <div class="grid">
+    <a class="card" href="bras.html">
+      <h2>That's IlleGull</h2>
+      <p>Seagulls are stealing bikini tops! Catch them to keep the beach decent.</p>
+    </a>
+    <a class="card" href="aliens.html">
+      <h2>Aliens</h2>
+      <p>The alien invasion has a wardrobe problem. Help them suit up.</p>
+    </a>
+    <a class="card" href="beaver.html">
+      <h2>Beaver Dam</h2>
+      <p>Guide the beaver to collect logs and fill the dams.</p>
+    </a>
+    <a class="card" href="frogger.html">
+      <h2>Frogger</h2>
+      <p>Classic road-crossing action. Arrow keys to move.</p>
+    </a>
+    <a class="card" href="titanic.html">
+      <h2>Titanic</h2>
+      <p>Navigate the icy waters and dodge the obstacles.</p>
+    </a>
+    <a class="card" href="dance.html">
+      <h2>Dance</h2>
+      <p>Music and moves. Turn your sound on.</p>
+    </a>
+    <a class="card" href="names.html">
+      <h2>Name Game</h2>
+      <p>Match the characters with their name tags.</p>
+    </a>
+    <a class="card" href="factory.html">
+      <h2>Factory</h2>
+      <p>Keep the production line moving.</p>
+    </a>
+  </div>
+
+  <footer>Emily World Games • playtest build</footer>
+</body>
+</html>
