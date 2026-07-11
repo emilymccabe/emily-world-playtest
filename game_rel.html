@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapture Patrol</title>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0c0c0c;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      #intro {
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 8, 12, 0.92);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        color: #f2ecd8;
+      }
+
+      #intro .card {
+        max-width: 640px;
+        margin: 1rem;
+        padding: 2rem 2.5rem;
+        background: #14141c;
+        border: 2px solid #b59410;
+        border-radius: 10px;
+        box-shadow: 0 0 40px rgba(181, 148, 16, 0.35);
+      }
+
+      #intro h1 {
+        margin: 0 0 0.25rem;
+        font-size: 2.6rem;
+        text-align: center;
+        color: #f7ef8a;
+        letter-spacing: 2px;
+      }
+
+      #intro .sub {
+        text-align: center;
+        margin: 0 0 1.25rem;
+        font-size: 0.95rem;
+        color: #9a937e;
+        font-style: italic;
+      }
+
+      #intro .quote {
+        font-style: italic;
+        text-align: center;
+        color: #d8d2bc;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+
+      #intro ul {
+        margin: 0 0 1.25rem;
+        padding-left: 1.2rem;
+        line-height: 1.65;
+        font-size: 1.02rem;
+      }
+
+      #intro .controls {
+        font-size: 0.9rem;
+        color: #9a937e;
+        border-top: 1px solid #2c2c38;
+        padding-top: 1rem;
+        line-height: 1.5;
+      }
+
+      #beginBtn {
+        display: block;
+        margin: 1.25rem auto 0;
+        padding: 0.8rem 1.6rem;
+        font-family: inherit;
+        font-size: 1.05rem;
+        font-weight: bold;
+        color: #14141c;
+        background: linear-gradient(to bottom, #f7ef8a, #edc967);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      #beginBtn:hover {
+        filter: brightness(1.1);
+      }
+    </style>
+  <script type="module" crossorigin src="./assets/game_rel-BPsUc9bA.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/index-8cATHe_G.js">
+  <link rel="modulepreload" crossorigin href="./assets/Text-D4rxKG7z.js">
+  <link rel="modulepreload" crossorigin href="./assets/Graphics-xKyWmSMV.js">
+</head>
+
+<body>
+    <div id="intro">
+      <div class="card">
+        <h1>RAPTURE PATROL&trade;</h1>
+        <p class="sub">a satire &mdash; the priest is the joke</p>
+        <p class="quote">
+          "Nobody asked me to save these people.<br>
+          That's how I know it's important."<br>
+          &mdash; Father Flanagan
+        </p>
+        <ul>
+          <li>The Rapture arrives in <b>30 seconds</b>. Father Flanagan knows this because he did the math on a napkin.</li>
+          <li>Below his gold tower: ordinary people. Walking around. Existing. <i>Legally.</i></li>
+          <li>His plan &mdash; and now, regrettably, yours &mdash; is to <b>throw Bibles at strangers, from a tower,</b> until they are "saved."</li>
+          <li>A direct hit converts one (1) soul. The soul's opinion on this was not collected.</li>
+        </ul>
+        <p class="controls">
+          Click the gold tower to move Father Flanagan up and down.
+          Click <i>him</i> to fire the Good Book at a passerby, hard.
+        </p>
+        <button id="beginBtn">START THE CLOCK (he's going to do it anyway)</button>
+      </div>
+    </div>
+
+    <div id="app">
+        <div id="pixi-container" style="width:100%;padding-top: 0;margin-top:0;"></div>
+    </div>
+    <script>
+      document.getElementById("beginBtn").addEventListener("click", () => {
+        document.getElementById("intro").style.display = "none";
+        window.__raptureShouldStart = true;
+        if (window.__startRapture) window.__startRapture();
+      });
+    </script>
+</body>
+</html>
